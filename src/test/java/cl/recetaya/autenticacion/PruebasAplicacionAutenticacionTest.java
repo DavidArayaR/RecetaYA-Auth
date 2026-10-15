@@ -1,13 +1,13 @@
-package cl.recetaya.auth;
+package cl.recetaya.autenticacion;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AuthApplicationTests {
+class PruebasAplicacionAutenticacionTest {
 
 	@Test
-	void contextLoads() {
+	void cargaContexto() {
 	}
 
 }
