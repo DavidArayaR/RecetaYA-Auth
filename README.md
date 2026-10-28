@@ -21,29 +21,27 @@ Auth no ofrece un CRUD completo de usuarios: su API implementa registro, inicio 
 - Puerto `8081` libre. H2 está incluido; no requiere un servidor de base de datos aparte.
 - En Windows, PowerShell. En macOS y Linux, Bash. No hace falta instalar Maven: el módulo incluye Maven Wrapper.
 
-Mientras los cuatro servicios permanezcan en el repositorio actual, clonar y entrar en `auth`:
+Este repositorio es independiente y **todavía no tiene remoto de GitHub**. Para probar la clonación desde su raíz local, usar una carpeta de destino vacía. Al publicarlo, sustituir `.` por la URL real del nuevo repositorio.
 
 ### Windows
 
 ```powershell
-git clone https://github.com/DavidArayaR/RecetaYA-DavidAraya-TomasHoyt.git receta-ya
-Set-Location .\receta-ya
+git clone . ..\auth-copia
+Set-Location ..\auth-copia
 git switch develop
-Set-Location .\auth
 java -version
 ```
 
 ### macOS y Linux
 
 ```bash
-git clone https://github.com/DavidArayaR/RecetaYA-DavidAraya-TomasHoyt.git receta-ya
-cd receta-ya
+git clone . ../auth-copia
+cd ../auth-copia
 git switch develop
-cd auth
 java -version
 ```
 
-Si Auth se publica después en un repositorio independiente, clonar su URL y ejecutar los comandos siguientes desde la raíz de ese nuevo repositorio; no habrá que entrar en `auth/`.
+Todos los comandos siguientes se ejecutan desde la raíz del repositorio de Auth, donde están `pom.xml` y Maven Wrapper.
 
 ## Compilar, probar y empaquetar
 
@@ -149,6 +147,6 @@ SELECT codigo, nombre FROM rol;
 
 ## Ramas y entrega
 
-En el repositorio actual, `main` representa la versión estable, `develop` integra los servicios y `feature/auth-service` identifica el trabajo de Auth. Para IE9, mostrar las ramas y los commits descriptivos con `git branch -a` y `git log --oneline`; publicar únicamente la versión revisada en el repositorio que se entregue al docente.
+En este repositorio, `main` representa la base estable, `develop` prepara la integración y `feature/auth-service` permite continuar el trabajo de Auth. Las tres ramas locales parten de la extracción del servicio desde el repositorio original. Para IE9, mostrar las ramas y los commits descriptivos con `git branch -a` y `git log --oneline`. Cuando se publique, indicar su URL real en el material de entrega.
 
 La evaluación solicita enlace(s) de GitHub y un video de **3 a 8 minutos**. En el video deben escucharse las voces de ambos estudiantes con audio claro; mostrar comandos y resultados ejecutados, las respuestas de Postman y la interacción real con H2. Entregar los enlaces en AVA y enviar copia al correo del docente según la pauta.
